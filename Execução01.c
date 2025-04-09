@@ -6,7 +6,7 @@ int main() {
 
     char  estado[5];
     char  codigo[10];
-    char  cidade[10];
+    char  cidade_A[10], cidade_B[10];
     unsigned long int   populacao_A, populacao_B; // (%lu) é usado no printf para exibir valores unsigned long int.
     float area_A, area_B;
     float pib_A, pib_B;
@@ -14,6 +14,7 @@ int main() {
     float densidadepopulacional_A, densidadepopulacional_B;
     float pibpercapita_A, pibpercapita_B;
     float superPoder_A, superPoder_B;
+    //char cidadeVencedora;
 
     printf("Insira o estado:\n");
     scanf("%s", &estado);
@@ -26,8 +27,8 @@ int main() {
 
 
     printf("Insira a cidade:\n");
-    scanf("%s", &cidade);
-    printf("Cidade: %s\n", cidade);
+    scanf("%s", &cidade_A);
+    printf("Cidade: %s\n", cidade_A);
 
 
     printf("Insira o numero da população:\n");
@@ -77,8 +78,8 @@ int main() {
 
 
     printf("Insira a cidade:\n");
-    scanf("%s", &cidade);
-    printf("Cidade: %s\n", cidade);
+    scanf("%s", &cidade_B);
+    printf("Cidade: %s\n", cidade_B);
 
 
     printf("Insira o numero da populacao:\n");
@@ -110,6 +111,46 @@ int main() {
     //Super Poder B
     superPoder_B = (int)(populacao_B + area_B + pib_B + pontosturisticos_B + pibpercapita_B + (densidadepopulacional_B / 1));
     printf("Super Poder (B): %.1f\n", superPoder_B);
+
+    //Comparação de Cartas:
+    // Desenvolva a lógica de comparação entre duas cartas.
+    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    
+    if (populacao_A > populacao_B){
+        printf("A carta 1 tem a maior população. \n");
+    } else{ 
+        printf("A carta 2 tem a maior população. \n");
+    }
+
+    if (densidadepopulacional_A < densidadepopulacional_B){
+        printf("A carta 1 tem a menor densidade populacional. \n");
+    }else{
+        printf("A carta 2 tem a menor densidade populacional. \n");
+    }
+
+    if (superPoder_A > superPoder_B){
+        printf("A carta 1 tem o maior poder! \n");
+    } else{
+        printf("A carta 2 tem o maior poder! \n");
+    }
+    
+
+    printf("A cidade vencedora é: %s\n", cidade_A, cidade_B);
+
+
+    // Exemplo:
+    // if (populacaoA > populacaoB) {
+    //     printf("Cidade 1 tem maior população.\n");
+    // } else {
+    //     printf("Cidade 2 tem maior população.\n");
+    // }
+
+    // Exibição dos Resultados:
+    // Após realizar as comparações, exiba os resultados para o usuário.
+    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+
+    // Exemplo:
+    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
 
     
 
